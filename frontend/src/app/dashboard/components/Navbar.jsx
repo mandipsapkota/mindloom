@@ -16,9 +16,9 @@ export const Navbar = () => {
     };
 
     return (
-        <aside className={`bg-cyan-100 ${isOpen ? "w-64" : "w-20"} transition-all duration-300 flex flex-col`} aria-label="Sidebar navigation">
+        <aside className={`bg-cyan-100/30 sm:bg-cyan-100/80 backdrop-blur-md h-screen fixed sm:static  ${isOpen ? "w-64 min-w-2xs" : "w-16 sm:w-20"} transition-all duration-300 flex flex-col`} aria-label="Sidebar navigation">
             {/* Toggle button */}
-            <header className="p-4 flex items-center justify-between cursor-pointer">
+            <header className="p-3 sm:p-4 flex items-center justify-between cursor-pointer">
                 {isOpen && <h1 href="/dashboard"><a className="text-xl font-bold text-gray-800 transition-opacity duration-300">Mindloom</a></h1>}
                 <button 
                     onClick={() => setIsOpen(!isOpen)}
@@ -55,10 +55,10 @@ export const Navbar = () => {
                                 <a 
                                     href={route}
                                     className={`flex items-center p-2 rounded-md ${
-                                        active 
-                                            ? "bg-cyan-200 text-cyan-800" 
-                                            : "text-gray-700 hover:bg-cyan-200"
-                                    }`}
+                                        active && isOpen
+                                            ? "bg-white/30 text-cyan-800 backdrop-opacity-20 border-2 border-white/40 backdrop-blur-lg" 
+                                            : "text-gray-700"
+                                    } ${isOpen ? "hover:bg-cyan-200 block" : "hidden"}`}
                                     aria-label={item}
                                     aria-current={active ? "page" : undefined}
                                 >
