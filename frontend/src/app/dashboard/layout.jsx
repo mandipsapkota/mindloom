@@ -14,7 +14,7 @@ export default function DashboardLayout({ children }) {
             <Navbar/>
             
             {/* Main content */}
-            <main className="flex-grow" id="main-content">
+            <main className="flex-grow ml-16 sm:ml-0" id="main-content">
                 {children}
             </main>
         </div>

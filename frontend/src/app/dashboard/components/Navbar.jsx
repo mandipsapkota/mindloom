@@ -71,14 +71,15 @@ export const Navbar = () => {
             </nav>
             
             {/* Settings at bottom */}
-            <footer className="p-4 mt-auto border-t border-cyan-200">
+            <footer className="p-4 mt-auto ">
+                <hr className={`mb-4 text-gray-700/50 ${isOpen ? "hover:bg-cyan-200 block" : "hidden"}`}/>
                 <a 
                     href="/dashboard/settings"
                     className={`flex items-center p-2 rounded-md ${
                         isActive("/dashboard/settings") 
                             ? "bg-cyan-200 text-cyan-800" 
                             : "text-gray-700 hover:bg-cyan-200"
-                    }`}
+                    } ${isOpen ? "hover:bg-cyan-200 block" : "hidden"}`}
                     aria-label="Settings"
                     aria-current={isActive("/dashboard/settings") ? "page" : undefined}
                 >
